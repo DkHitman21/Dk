@@ -26,7 +26,7 @@
 ## 💻 Deploy/Hosting Guide
 
 -   Section Moved to
-    [Chitoge-Guides](https://github.com/ShineiIchijo/Chitoge-Guides/blob/main/README.md)
+    [Cara-Guides](https://github.com/ShineiIchijo/Chitoge-Guides/blob/main/README.md)
 
 ## 🍥 Features of the Repo
 
