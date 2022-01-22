@@ -1,7 +1,10 @@
-import * as mwl from "mywaifulist-scraper";
+import { Character } from "mailist";
+const marika = require("@shineiichijo/marika");
+import { readFileSync, writeFileSync, existsSync } from 'fs-extra';
 import MessageHandler from "../../Handlers/MessageHandler";
 import BaseCommand from "../../lib/BaseCommand";
 import WAClient from "../../lib/WAClient";
+import axios from "axios";
 import { ISimplifiedMessage } from "../../typings";
 import request from "../../lib/request";
 import { MessageType } from "@adiwajshing/baileys";
@@ -18,42 +21,31 @@ export default class Command extends BaseCommand {
 		});
 	}
 
-	run = async (M: ISimplifiedMessage): Promise<void> => {
-		const mwlClient = new mwl.client();
-		const o = Math.floor(Math.random() * 41999);
-		const haigusha = await mwlClient.getCharacter(o);
-		let text = "";
-		text += `💙 *Name: ${haigusha.name}*\n`;
-		if (haigusha.original_name !== "")
-			text += `💚 *Original Name: ${haigusha.original_name}*\n`;
-		if (haigusha.weight !== null) text += `⚖ *Weight: ${haigusha.weight}*\n`;
-		if (haigusha.height !== null) text += `📍 *Height: ${haigusha.height}*\n`;
-		if (haigusha.bust !== null) text += `💠 *Bust: ${haigusha.bust}*\n`;
-		if (haigusha.hip !== null) text += `🎗 *Hip: ${haigusha.hip}*\n`;
-		if (haigusha.waist !== null) text += `🎀 *Waist: ${haigusha.waist}*\n`;
-		if (haigusha.blood_type !== null)
-			text += `🩸 *Blood Type: ${haigusha.blood_type}*\n`;
-		if (haigusha.origin !== null) text += `🎐 *Origin: ${haigusha.origin}*\n`;
-		if (haigusha.age !== null) text += `🎂 *Age: ${haigusha.age}*\n`;
-		if (haigusha.likes !== null) text += `🖤 *Likes: ${haigusha.likes}*\n`;
-		text += `🏅 *Like Rank: ${haigusha.like_rank}*\n`;
-		text += `📈 *Popularity Rank: ${haigusha.popularity_rank}*\n\n`;
-		text += `💛 *Source: ${haigusha.series.name}*\n\n`;
-		text += `🌐 *URL: ${haigusha.url}*\n\n`;
-		text += `❤ *Description:* ${haigusha.description}\n`;
-		if (haigusha == undefined) {
-			return void M.reply("✖ An error occurred. Please try again later.");
-		}
-		//const thumbnail = await request.buffer(
-		//`https://mocah.org/thumbs/192010-chitoge-kirisaki-1920x1080.png`
-		//);
-		const buffer = await request.buffer(haigusha.display_picture).catch((e) => {
-			return void M.reply(e.message);
+run = async (M: ISimplifiedMessage): Promise<void> => {
+let a = await marika.getRandomCharacter();
+let f = a.name.toLowerCase(); 
+		//const chitoge = joined.trim();
+		const client = new Character();
+		const chara = await client.character(f).catch((err: any) => {
+			return void M.reply(`Error, Try again later`)
 		});
+		//if (!chara)
+			//return void (await M.reply(`Couldn't find any matching character.`));
+		let text = "";
+		text += `💙 *Name: ${chara.data.characters.results[0].name.full}*\n`;
+		text += `💛 *Source: ${chara.data.characters.results[0].media.edges[0].node.title.userPreferred}*\n\n`;
+		text += `🌐 *URL: ${chara.data.characters.results[0].siteUrl}*\n\n`;
+		text += `❤ *Description:* ${chara.data.characters.results[0].description}\n`;
+
+		const buffer = await request
+			.buffer(chara.data.characters.results[0].image.large)
+			.catch((e) => {
+				return void M.reply(e.message);
+			});
 		while (true) {
 			try {
 				M.reply(
-					buffer || "✖ An error occurred. Please try again later",
+					buffer || "✖ An error occurred. Please try again later.",
 					MessageType.image,
 					undefined,
 					undefined,
