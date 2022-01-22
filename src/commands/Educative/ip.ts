@@ -3,29 +3,32 @@ import BaseCommand from '../../lib/BaseCommand'
 import WAClient from '../../lib/WAClient'
 import { IParsedArgs, ISimplifiedMessage } from '../../typings'
 import axios from 'axios'
+import request from '../../lib/request'
+import { MessageType, Mimetype } from '@adiwajshing/baileys'
 
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'ip',
-            description: 'Gives you the info of the ip .',
-            aliases: ['ip'],
+            description: `Gives you info about IP Address`,
+            aliases: ['ipa', 'ip', 'ipaddress'],
             category: 'educative',
-            usage: `${client.config.prefix}ip [city or state name]`
+            usage: `${client.config.prefix}ip [name]`,
+            baseXp: 50
         })
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void M.reply('Do you want me to give the info of an unknown ip, Baka!')
-        const chitoge = joined.trim()
-        await axios.get(`http://docs-jojo.herokuapp.com/api/ip_geolocation?ip=${chitoge}`)
-        .then((response) => {
-                // console.log(response);
-                const text = `🎗 *Ip*:  ${response.data.ip}\n *Type*: ${response.data.type}\n *Continent_code*: ${response.data.continent_code}\n *Continent_name*: ${response.data.continent_name}\n *Country_name*: ${response.data.country_name}`
-                M.reply(text);
-            }).catch(err => {
-                M.reply(`No such ip, Baka!`)
-            }
-            )
-    };
+        if (!joined) return void (await M.reply(`Please provide the IP Address`))
+        const pypi = joined.trim()
+        await axios
+            .get(`http://ip-api.com/json/${pypi}`)
+            .then((response) => {
+                const text = `Status : ${response.data.status} \n IP : ${response.data.query} \n ISP : ${response.data.isp} \n Organisation : ${response.data.org} \n Country : ${response.data.country} \n Region : ${response.data.regionName} \n City : ${response.data.country} `
+                M.reply(text)
+            })
+            .catch((err) => {
+                M.reply(`Sorry, error.`)
+            })
+    }
 }
