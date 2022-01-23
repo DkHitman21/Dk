@@ -54,7 +54,7 @@ export default class Command extends BaseCommand {
 					key
 				)} ❱━╝*\n❐ \`\`\`${categories[key]
 					.map((command) => command.config?.command)
-					.join(" \n ")}\`\`\`\n\n`;
+					.join(" , ")}\`\`\`\n\n`;
 			return void this.client.sendMessage(
 				M.from,
 				{ url: beckylynch },
