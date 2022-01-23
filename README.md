@@ -1,5 +1,6 @@
 <div align="center">
-  <a href="https://coolwallpapers.me/5045071-anime-blonde-blue-eyes-chitoge-kirisaki-nisekoi.html"><img src="https://i.ibb.co/mNFxB0T/f23a50dd-cd79-4603-b3ab-01c392468563.jpg" alt="Cara" border="0" style="width:380px;height:160px;"></a>
+<a href="https://www.linkpicture.com/view.php?img=LPic6170f1a91eb90287883190"><img src="https://www.linkpicture.com/q/IMG-20211021-WA0157.jpg" type="image"></a>
+  
 
 # <h1><er>Cara is a modified version of <a href="https://github.com/ShineiIchijo/Chitoge">Chitoge</er></a></h1>
 
