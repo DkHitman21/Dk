@@ -45,12 +45,12 @@ export default class Command extends BaseCommand {
 			}
 			let text = `👩🏻‍🦰 Hey! *@${
 				user.split("@")[0]
-			}*, I'm Dk-Hitman.\n\nMy prefix is - "${
+			}*, I'm Dk👾Hitman💫 a bot built to me your group enjoyable⚠️.\n\nMy prefix is - "${
 				this.client.config.prefix
 			}"\n\n*╚『•My Cmd List•』╝*.\n\n`;
 			const keys = Object.keys(categories);
 			for (const key of keys)
-				text += `*╚━❰🍁${this.client.util.capitalize(
+				text += `*╚━❰😈${this.client.util.capitalize(
 					key
 				)} ❱━╝*\n❐ \`\`\`${categories[key]
 					.map((command) => command.config?.command)
@@ -62,7 +62,7 @@ export default class Command extends BaseCommand {
 				{
 					quoted: M.WAMessage,
 					mimetype: Mimetype.gif,
-					caption: `${text} 📝 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`,
+					caption: `${text} 🔥 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`,
 					contextInfo: { mentionedJid: [user] },
 				}
 			);
@@ -89,7 +89,7 @@ export default class Command extends BaseCommand {
 					: ""
 			}\n🎐 *Group Only:* ${this.client.util.capitalize(
 				JSON.stringify(!command.config.dm ?? true)
-			)}\n💎 *Usage:* ${command.config?.usage || ""}\n\n📒 *Description:* ${
+			)}\n💎 *Usage:* ${command.config?.usage || ""}\n\n💞 *Description:* ${
 				command.config?.description || ""
 			}`
 		);
