@@ -30,8 +30,8 @@ export default class Command extends BaseCommand {
         if (!buffer) return void M.reply(`You didn't provide any sticker to convert`)
         const filename = `${tmpdir()}/${Math.random().toString(36)}`
         const sticker:any = await  new Sticker(buffer, {
-            pack: pack[1] || '🍁 Lucy ', 
-            author: pack[2] || ' Von Strucker 🍁', 
+            pack: pack[1] || '🍁 DK-HiTMAN', 
+            author: pack[2] || ' DK💕 hitman🍁', 
             quality: 50 
         }).build();
           fs.writeFileSync(`${filename}.webp`,sticker);
