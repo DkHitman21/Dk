@@ -45,7 +45,7 @@ export default class Command extends BaseCommand {
 			}
 			let text = `👩🏻‍🦰 Hey! *@${
 				user.split("@")[0]
-			}*, I'm Dk👾Hitman💫 a bot built to me your group enjoyable⚠️.\n\nMy prefix is - "${
+			}*, I'm Dk👾Hitman💫 a bot built to make your group enjoyable⚠️.\n\nMy prefix is - "${
 				this.client.config.prefix
 			}"\n\n*╚『•My Cmd List•』╝*.\n\n`;
 			const keys = Object.keys(categories);
