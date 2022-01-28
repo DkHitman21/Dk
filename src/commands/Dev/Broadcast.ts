@@ -31,9 +31,9 @@ export default class Command extends BaseCommand {
 		const images = [
 			"https://wallpapercave.com/w/wp10318653.jpg",
 			"https://wallpapercave.com/w/wp7111330.jpg",
-			"https://wallpapercave.com/w/wp9733029.jpg",
-			"https://wallpapercave.com/w/wp9733050.jpg",
-			"https://wallpapercave.com/w/wp9733190.jpg",
+			"https://wallpapercave.com/w/wp3281482.jpg",
+			"https://wallpapercave.com/w/wp10318669.jpg",
+			"https://wallpapercave.com/w/wp10318667.jpg",
 			"https://wallpapercave.com/w/wp3051982.jpg",
 		];
 		const selected = images[Math.floor(Math.random() * images.length)];
