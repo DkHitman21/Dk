@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
 			{
 				quoted: M.WAMessage,
 				mimetype: Mimetype.gif,
-				caption: `Hai✌️, Hai✌️, \n\n I am here. 🐰 \n`,
+				caption: `Hai💗, Hai💞, \n\n I am here. 🐰 \n`,
 			}
 		);
 	};
