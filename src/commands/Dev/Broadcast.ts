@@ -29,8 +29,8 @@ export default class Command extends BaseCommand {
 			return void (await M.reply(`Please provide the Broadcast Message.`));
 		const term = joined.trim();
 		const images = [
-			"https://wallpapercave.com/w/wp9732962.jpg",
-			"https://wallpapercave.com/w/wp9733019.jpg",
+			"https://wallpapercave.com/w/wp10318653.jpg",
+			"https://wallpapercave.com/w/wp7111330.jpg",
 			"https://wallpapercave.com/w/wp9733029.jpg",
 			"https://wallpapercave.com/w/wp9733050.jpg",
 			"https://wallpapercave.com/w/wp9733190.jpg",
