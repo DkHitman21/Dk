@@ -15,7 +15,7 @@
 <h1>DK hitman is full of Anime and Nsfw and many more features</h1>
 </div>
 
-## 🍃 Official group-> comming soon
+## 🍃 Official group-> https://chat.whatsapp.com/JQiAOFypdm04PNBfvPINlh
 
 ## ✨ Highlights
 
