@@ -12,10 +12,10 @@
 
 </div>
 <div align="center">
-<h1>Cara is full of Anime and Nsfw and many more features</h1>
+<h1>DK hitman is full of Anime and Nsfw and many more features</h1>
 </div>
 
-## 🍃 Official group-> http://gg.gg/Arus-Das-cara
+## 🍃 Official group-> comming soon
 
 ## ✨ Highlights
 
