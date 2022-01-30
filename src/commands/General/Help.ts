@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
 	): Promise<void> => {
 		const user = M.sender.jid;
 		const beckylynch =
-			"https://telegra.ph/file/d33bcaf10689734a35fbf.mp4";
+			"assets/VID-20220129-WA0274.mp4";
 		if (!parsedArgs.joined) {
 			const commands = this.handler.commands.keys();
 			const categories: { [key: string]: ICommand[] } = {};
