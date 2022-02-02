@@ -34,7 +34,7 @@ export default class Command extends BaseCommand {
 			"https://wallpapercave.com/w/wp3281482.jpg",
 			"https://wallpapercave.com/w/wp10318669.jpg",
 			"https://wallpapercave.com/w/wp10318667.jpg",
-			"https://wallpapercave.com/w/wp3051982.jpg",
+			"https://wallpapercave.com/w/wp10318653.jpg",
 		];
 		const selected = images[Math.floor(Math.random() * images.length)];
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,7 +45,7 @@ export default class Command extends BaseCommand {
 			.map((jids) => (jids.includes("g.us") ? jids : null))
 			.filter((v) => v);
 		for (let i = 0; i < chats.length; i++) {
-			const text = `*👩🏻‍🦰「 Dk-BROADCAST 」👩🏻‍🦰*\n\n${term}\n\n Regards ~ *${M.sender.username}*`;
+			const text = `*👩🏻‍🦰「 DkHITMAN-BROADCAST 」👩🏻‍🦰*\n\n${term}\n\n Regards ~ *${M.sender.username}*`;
 			this.client.sendMessage(chats[i], { url: selected }, MessageType.image, {
 				caption: `${text}`,
 				contextInfo: {
