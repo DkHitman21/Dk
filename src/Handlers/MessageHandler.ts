@@ -95,12 +95,12 @@ export default class MessageHandler {
                         const n = [
                                   './assets/VID-20220129-WA0274.mp4'
                             ]
-                        MessageType.video, {
-            quoted: M.WAMessage,
-            mimetype: Mimetype.gif,
-            caption: 
+                        MessageType.video,
+                       quoted: M.WAMessage,
+                       mimetype: Mimetype.gif,
+                       caption: 
 					`No such command, Baka! Have you never seen someone use the command *${this.client.config.prefix}help*.`
-				)};
+				);
 			const user = await this.client.getUser(M.sender.jid);
 			if (user.ban) return void M.reply("You're Banned from using commands.");
 			const state = await this.client.DB.disabledcommands.findOne({
