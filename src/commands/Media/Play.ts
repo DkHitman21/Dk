@@ -10,9 +10,9 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'play',
-            description: '🎵 play a song with just search term!',
+            description: '💻 play a song with just search term!',
             category: 'media',
-            aliases: ['music'],
+            aliases: ['music', 'song'],
             usage: `${client.config.prefix}play [term]`,
             baseXp: 30
         })
@@ -25,14 +25,14 @@ export default class Command extends BaseCommand {
         if (!videos || videos.length <= 0) return void M.reply(`⚓ No Matching videos found for the term : *${term}*`)
         const audio = new YT(videos[0].url, 'audio')
         if (!audio.url) return
-        M.reply('*❤️ Sending...*')
+        M.reply('😈 Sending...')
         this.client
             .sendMessage(M.from, await audio.getBuffer(), MessageType.audio, {
                 quoted: M.WAMessage,
                 contextInfo: {
                     externalAdReply: {
                         title: videos[0].title.substr(0, 30),
-                        body: `author : ${videos[0].author.name.substr(0, 20)}\n🍁 Dk Hitman 🍁`,
+                        body: `author : ${videos[0].author.name.substr(0, 20)}\n😈 DK HITMAN 😈`,
                         mediaType: 2,
                         thumbnailUrl: `https://i.ytimg.com/vi/${audio.id}/hqdefault.jpg`,
                         mediaUrl: audio.url
